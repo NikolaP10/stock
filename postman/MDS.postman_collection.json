@@ -1,0 +1,1083 @@
+{
+	"info": {
+		"_postman_id": "2b27117e-500c-49b4-992f-807a4cd86bd3",
+		"name": "MDS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11733784"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Get Company By Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/company/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Company By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/company/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"company",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 20:17:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Stock\",\n    \"code\": \"STCK\",\n    \"founded\": \"2025-01-01\",\n    \"country\": \"Liberia\",\n    \"city\": \"Monrovia\",\n    \"address\": \"Monrovia Central 123\",\n    \"owner\": \"George Weah\"\n}"
+						},
+						{
+							"name": "ENTITY_NOT_FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/company/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"company",
+										"11"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 21:47:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Entity with id: 11 not found\",\n    \"errorCode\": \"ENTITY_NOT_FOUND\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Company\",\r\n    \"code\": \"NCPN\",\r\n    \"founded\": \"2025-02-15\",\r\n    \"country\": \"Spain\",\r\n    \"city\": \"Madrid\",\r\n    \"address\": \"La Ulica 456\",\r\n    \"owner\": \"Carlos Sainz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ENTITY_ALREADY_EXISTS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"New Company\",\r\n    \"code\": \"NCPN\",\r\n    \"founded\": \"2025-02-15\",\r\n    \"country\": \"Spain\",\r\n    \"city\": \"Madrid\",\r\n    \"address\": \"La Ulica 456\",\r\n    \"owner\": \"Carlos Sainz\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/company",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 21:57:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Company with name: New Company and code: NCPN already exists\",\n    \"errorCode\": \"ENTITY_ALREADY_EXISTS\"\n}"
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"New Company\",\r\n    \"code\": \"NCPN\",\r\n    \"founded\": \"2025-02-15\",\r\n    \"country\": \"Spain\",\r\n    \"city\": \"Madrid\",\r\n    \"address\": \"La Ulica 456\",\r\n    \"owner\": \"Carlos Sainz\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/company",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 21:36:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"New Company\",\n    \"code\": \"NCPN\",\n    \"founded\": \"2025-02-15\",\n    \"country\": \"Spain\",\n    \"city\": \"Madrid\",\n    \"address\": \"La Ulica 456\",\n    \"owner\": \"Carlos Sainz\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Stock\",\r\n    \"code\": \"STCK\",\r\n    \"founded\": \"2025-01-01\",\r\n    \"country\": \"Liberia\",\r\n    \"city\": \"Monrovia\",\r\n    \"address\": \"Monrovia Central 123\",\r\n    \"owner\": \"New Owner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/company/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Stock\",\r\n    \"code\": \"STCK\",\r\n    \"founded\": \"2025-01-01\",\r\n    \"country\": \"Liberia\",\r\n    \"city\": \"Monrovia\",\r\n    \"address\": \"Monrovia Central 123\",\r\n    \"owner\": \"New Owner\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/company/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"company",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:10:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Stock\",\n    \"code\": \"STCK\",\n    \"founded\": \"2025-01-01\",\n    \"country\": \"Liberia\",\n    \"city\": \"Monrovia\",\n    \"address\": \"Monrovia Central 123\",\n    \"owner\": \"New Owner\"\n}"
+						},
+						{
+							"name": "ENTITY_NOT_FOUND",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 33,\r\n    \"name\": \"Stock\",\r\n    \"code\": \"STCK\",\r\n    \"founded\": \"2025-01-01\",\r\n    \"country\": \"Liberia\",\r\n    \"city\": \"Monrovia\",\r\n    \"address\": \"Monrovia Central 123\",\r\n    \"owner\": \"New Owner\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/company/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"company",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:11:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Company with provided id: 33 does not exist\",\n    \"errorCode\": \"ENTITY_NOT_FOUND\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete  Company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/company/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ENTITY_NOT_FOUND",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/company/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"company",
+										"2"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:16:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Company with provided id: 2 does not exist and can't be removed\",\n    \"errorCode\": \"ENTITY_NOT_FOUND\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stocks",
+			"item": [
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/stock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/stock/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:54:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"code\": \"GOOG\",\n    \"open\": 50.050049,\n    \"high\": 52.082081,\n    \"low\": 48.028027,\n    \"close\": 50.220219,\n    \"adjClose\": 50.220219,\n    \"volume\": 44659000,\n    \"date\": \"2004-08-19\"\n}"
+						},
+						{
+							"name": "ENTITY_NOT_FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/stock/12323232",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock",
+										"12323232"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:54:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Stock with id: 12323232 not found\",\n    \"errorCode\": \"ENTITY_NOT_FOUND\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Stocks By Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/stock/all/NCPN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock",
+								"all",
+								"NCPN"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/stock/all/NCPN",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock",
+										"all",
+										"NCPN"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:59:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 26567,\n        \"code\": \"NCPN\",\n        \"open\": 0.138348,\n        \"high\": 0.148906,\n        \"low\": 0.126348,\n        \"close\": 0.128348,\n        \"adjClose\": 0.101261,\n        \"volume\": 442533600,\n        \"date\": \"2025-01-01\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Stock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"NCPN\",\r\n    \"open\": 0.138348,\r\n    \"high\": 0.148906,\r\n    \"low\": 0.126348,\r\n    \"close\": 0.128348,\r\n    \"adjClose\": 0.101261,\r\n    \"volume\": 442533600,\r\n    \"date\": \"2025-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"NCPN\",\r\n    \"open\": 0.138348,\r\n    \"high\": 0.148906,\r\n    \"low\": 0.126348,\r\n    \"close\": 0.128348,\r\n    \"adjClose\": 0.101261,\r\n    \"volume\": 442533600,\r\n    \"date\": \"2025-01-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/stock",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 22:36:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 26567,\n    \"code\": \"NCPN\",\n    \"open\": 0.138348,\n    \"high\": 0.148906,\n    \"low\": 0.126348,\n    \"close\": 0.128348,\n    \"adjClose\": 0.101261,\n    \"volume\": 442533600,\n    \"date\": \"2025-01-01\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Stock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 26567,\r\n    \"code\": \"NCPN\",\r\n    \"open\": 0.118348,\r\n    \"high\": 0.118906,\r\n    \"low\": 0.116348,\r\n    \"close\": 0.128348,\r\n    \"adjClose\": 0.101261,\r\n    \"volume\": 442533600,\r\n    \"date\": \"2025-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/stock/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 26567,\r\n    \"code\": \"NCPN\",\r\n    \"open\": 0.118348,\r\n    \"high\": 0.118906,\r\n    \"low\": 0.116348,\r\n    \"close\": 0.128348,\r\n    \"adjClose\": 0.101261,\r\n    \"volume\": 442533600,\r\n    \"date\": \"2025-01-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/stock/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 23:01:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 26567,\n    \"code\": \"NCPN\",\n    \"open\": 0.118348,\n    \"high\": 0.118906,\n    \"low\": 0.116348,\n    \"close\": 0.128348,\n    \"adjClose\": 0.101261,\n    \"volume\": 442533600,\n    \"date\": \"2025-01-01\"\n}"
+						},
+						{
+							"name": "ENTITY_NOT_FOUND",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 26567,\r\n    \"code\": \"AAPL\",\r\n    \"open\": 0.118348,\r\n    \"high\": 0.118906,\r\n    \"low\": 0.116348,\r\n    \"close\": 0.128348,\r\n    \"adjClose\": 0.101261,\r\n    \"volume\": 442533600,\r\n    \"date\": \"2025-01-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/stock/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 23:04:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Stock with provided id: 26567 for company with code:AAPL does not exist\",\n    \"errorCode\": \"ENTITY_NOT_FOUND\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Stock",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/stock/26567",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock",
+								"26567"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stock Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/stock/details/AAPL?from=2005-09-10&to=2005-09-20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock",
+								"details",
+								"AAPL"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2005-09-10"
+								},
+								{
+									"key": "to",
+									"value": "2005-09-20"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/stock/details/AAPL?from=2025-09-29&to=2025-09-30",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock",
+										"details",
+										"AAPL"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "2025-09-29"
+										},
+										{
+											"key": "to",
+											"value": "2025-09-30"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 20:58:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"requestedPeriod\": {\n        \"trade\": {\n            \"bestBuy\": null,\n            \"bestSell\": null\n        },\n        \"closeDiff\": null,\n        \"maxProfit\": 0,\n        \"othersMaxProfit\": {}\n    },\n    \"previousPeriod\": {\n        \"bestBuy\": null,\n        \"bestSell\": null\n    },\n    \"followingPeriod\": {\n        \"bestBuy\": null,\n        \"bestSell\": null\n    }\n}"
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/stock/details/AAPL?from=2005-09-10&to=2005-09-20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"stock",
+										"details",
+										"AAPL"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "2005-09-10"
+										},
+										{
+											"key": "to",
+											"value": "2005-09-20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Mar 2025 20:59:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"requestedPeriod\": {\n        \"trade\": {\n            \"bestBuy\": {\n                \"bestBuyDate\": \"2005-09-15\",\n                \"bestBuyLow\": 1.761786,\n                \"bestBuyClose\": 1.781071\n            },\n            \"bestSell\": {\n                \"bestSellDate\": \"2005-09-20\",\n                \"bestSellHigh\": 1.921786,\n                \"bestSellClose\": 1.899643\n            }\n        },\n        \"closeDiff\": -0.063929,\n        \"maxProfit\": 0.228931,\n        \"othersMaxProfit\": {\n            \"GOOG\": 12.937974,\n            \"AMZN\": 1.329998\n        }\n    },\n    \"previousPeriod\": {\n        \"bestBuy\": {\n            \"bestBuyDate\": \"2005-08-30\",\n            \"bestBuyLow\": 1.64,\n            \"bestBuyClose\": 1.663214\n        },\n        \"bestSell\": {\n            \"bestSellDate\": \"2005-09-09\",\n            \"bestSellHigh\": 1.833929,\n            \"bestSellClose\": 1.8325\n        }\n    },\n    \"followingPeriod\": {\n        \"bestBuy\": {\n            \"bestBuyDate\": \"2005-09-28\",\n            \"bestBuyLow\": 1.806786,\n            \"bestBuyClose\": 1.824286\n        },\n        \"bestSell\": {\n            \"bestSellDate\": \"2005-09-26\",\n            \"bestSellHigh\": 1.948571,\n            \"bestSellClose\": 1.922857\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

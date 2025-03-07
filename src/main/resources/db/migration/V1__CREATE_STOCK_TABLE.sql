@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS stock (
+	id IDENTITY NOT NULL PRIMARY KEY,
+	code VARCHAR(5) NOT NULL,
+	open NUMERIC(10,6),
+	high NUMERIC(10,6),
+	low NUMERIC(10,6),
+	close NUMERIC(10,6),
+	adj_close NUMERIC(10,6),
+	volume NUMERIC,
+	date DATE NOT NULL
+);
